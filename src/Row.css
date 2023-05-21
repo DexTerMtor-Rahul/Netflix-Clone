@@ -1,0 +1,274 @@
+.row{
+     margin-left: 20px;
+     color: white;
+}
+.row__posters{
+     /*conatainer for row*/
+     display: flex;
+     overflow-y: hidden;
+     overflow-x: scroll;
+     padding: 20px;
+}
+
+.row__posters::-webkit-scrollbar{
+     display: none;
+}
+
+.row__poster{
+     width: 100%;
+     object-fit: contain;
+     max-height: 100px;
+     margin-right: 10px;
+     transition: transform 450ms;
+}
+
+.row__poster:hover{
+     transform: scale(1.08);
+}
+
+.row__posterLarge{
+     max-height: 250px;
+}
+
+.row__posterLarge:hover {
+     transform: scale(1.09);
+}
+
+.info__overlay {
+     position: fixed;
+     content: "";
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.7);
+     z-index: 99;
+     overflow: scroll;
+}
+
+.info__overlay--contentBox {
+     position: absolute;
+     top: 8rem;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 85rem;
+     height: auto;
+     min-height: 50rem;
+     border-radius: 1rem;
+     overflow: hidden;
+     background-color: #111;
+}
+
+.info__overlay--videoBox {
+     width: 100%;
+     height: 100%;
+     position: relative;
+}
+
+.info__overlay--youtube {
+     width: 100%;
+     height: 47.8rem;
+}
+
+.info__overlay--iconBox {
+     position: absolute;
+     bottom: 4vw;
+     left: 3rem;
+     display: flex;
+     align-items: center;
+}
+
+.info__overlay--iconBox>* {
+     margin-right: 1rem;
+     cursor: pointer;
+}
+
+.info__button {
+     background-color: rgba(100, 100, 100, 0.5);
+     color: inherit;
+     font-weight: 500;
+     font-family: inherit;
+     font-size: 2rem;
+     border: none;
+     padding: 1.5rem 3rem;
+     min-width: 10rem;
+     border-radius: 4px;
+     display: flex;
+     align-items: center;
+     transition: all 0.1s;
+     cursor: pointer;
+}
+
+.info__button--play {
+     color: #333;
+     background-color: #fff;
+     font-size: 2rem;
+}
+
+.info__button span {
+     margin-top: -.4vw;
+     margin-left: 1rem;
+}
+
+.info__button--play:hover {
+     background-color: rgb(225, 225, 225);
+}
+
+.info__overlay--text {
+     padding: 2rem 4rem 4rem;
+}
+
+.info__overlay--text h1 {
+     font-size: 4rem;
+}
+
+.info__overlay--text h2 {
+     font-size: 2.4rem;
+     margin-bottom: 3rem;
+     font-weight: 300;
+     font-style: italic;
+}
+
+.info__overlay--text p {
+     line-height: 1.6;
+     font-size: 1.6rem;
+}
+
+.info__overlay--btnClose {
+     position: absolute;
+     top: 0;
+     right: 0;
+     border: none;
+     margin-top: 1.5rem;
+     margin-right: 1.5rem;
+     font-size: 2rem;
+     z-index: 50;
+     cursor: pointer;
+}
+
+.icon-white {
+     color: white;
+}
+
+.icon-black {
+     color: #111;
+}
+
+.icon-black-opacity {
+     color: rgba(32, 32, 32, 0.6);
+}
+
+.info__icon:hover>.icon-black-opacity {
+     color: rgba(32, 32, 32, 1);
+}
+
+.error {
+     position: fixed;
+     padding: 2rem 3rem 2.5rem;
+     top: 10rem;
+     left: 50%;
+     z-index: 999;
+     transform: translateX(-50%);
+     border: 1px solid rgba(80, 80, 80, 0.2);
+     border-top: 2px solid #fff;
+     background-color: rgba(10, 10, 10, 0.9);
+}
+
+.error__heading {
+     font-family: inherit;
+     font-size: 3rem;
+     font-weight: 500;
+     margin-bottom: 1rem;
+}
+
+.error__description {
+     font-family: inherit;
+     font-size: 2rem;
+     font-weight: 300;
+}
+
+.fade-in {
+     animation: fadeIn ease 0.5s;
+}
+
+.fade-out {
+     animation: fadeOut ease 0.5s;
+}
+
+@keyframes fadeIn {
+     0% {
+          opacity: 0;
+     }
+
+     100% {
+          opacity: 1;
+     }
+}
+
+@keyframes fadeOut {
+     0% {
+          opacity: 1;
+     }
+
+     100% {
+          opacity: 0;
+     }
+}
+
+@media (max-width: 900px) {
+     .nav__list {
+          display: none;
+     }
+
+     .nav__browse {
+          display: flex;
+     }
+
+     .info__overlay--contentBox {
+          width: 95%;
+          top: 8rem;
+          transform: translateX(-50%);
+     }
+
+     .info__overlay--youtube {
+          height: 45vw;
+     }
+
+     .info__overlay--text {
+          padding: 2vw 4vw 4vw;
+     }
+
+     .info__overlay--text h2 {
+          margin-bottom: 3vw;
+     }
+}
+
+@media (max-width: 775px) {
+     .rows {
+          top: -7rem;
+     }
+
+     .info__button {
+          padding: 1rem 2rem;
+     }
+
+     .row__poster {
+          height: 15vw;
+     }
+
+     .row__title {
+          font-size: 1.8rem;
+     }
+}
+
+@media (max-width: 450px) {
+     .info__overlay--text p {
+          font-size: 2rem;
+     }
+}
+
+@media (max-width: 350px) {
+     .rows {
+          top: -5rem;
+     }
+}
